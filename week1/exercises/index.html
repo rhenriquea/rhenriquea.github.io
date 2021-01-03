@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD330 - Week 01 | Exercises | Story Writer</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/week1/styles.css">
+</head>
+
+<body>
+  <header>
+    <a href="javascript:void(0)" onclick="goBack()"> &larr; Back</a>
+    <h1>WDD330 - Week 1</h1>
+  </header>
+
+  <main>
+    <h1>Story Editor</h1>
+    <div id="error_message"></div>
+    <label>Story Name:
+      <input aria-label="name" id=name_input></input>
+    </label>
+
+    <section>
+      <button onclick="execute('load')">Find / Edit</button>
+      <button onclick="execute('save')">Save</button>
+    </section>
+
+    <textarea id="story_editor" placeholder="Write a totally awesome story
+here."></textarea>
+
+    <h1 id="story_title"></h1>
+    <section id="story_display"></section>
+
+  </main>
+
+  <footer>
+    <p>Created by &copy; Rafael Almeida, 2020</p>
+  </footer>
+
+
+  <script src="../../js/main.js"></script>
+  <script src="../../js/week1/index.js"></script>
+</body>
+
+</html>

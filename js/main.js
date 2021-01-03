@@ -1,5 +1,9 @@
 'use strict';
 
+function goBack() {
+  window.history.back();
+}
+
 function createList() {
   const links = [
     { label: "Week 1 - Notes", url: "week1/index.html" }
@@ -15,8 +19,10 @@ function createList() {
     a.appendChild(label);
     a.setAttribute('href', link.url);
     li.appendChild(a);
-  
-    contentList.appendChild(li);
+
+    if(contentList) {
+      contentList.appendChild(li);
+    }
   });
 }
 
