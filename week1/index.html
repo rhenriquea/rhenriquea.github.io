@@ -4,28 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WDD330 - Portfolio</title>
+  <title>WDD330 - Week 01</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-
   <header>
-    <h1>WDD330 - Portfolio</h1>
+    <a href="javascript:void(0)" onclick="goBack()"> &larr; Back</a>
+    <h1>WDD330 - Week 1</h1>
   </header>
 
   <main>
-    <ol id="contentList"></ol>
+    <p>Notes...</p>
   </main>
 
   <footer>
     <p>Created by &copy; Rafael Almeida, 2020</p>
   </footer>
 
-  <script src="js/main.js"></script>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </body>
 
 </html>
