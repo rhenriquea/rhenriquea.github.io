@@ -6,7 +6,8 @@ function goBack() {
 
 function createList() {
   const links = [
-    { label: "Week 1 - Notes", url: "week1/index.html" }
+    { label: "Week 1 - Notes", url: "content/week1/index.html" },
+    { label: "Week 2 - Notes", url: "content/week2/index.html" }
   ];
   
   const contentList = document.getElementById('contentList');

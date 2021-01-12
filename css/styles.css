@@ -38,3 +38,8 @@ header a {
 a:active, a:visited {
   color: #81000b;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
