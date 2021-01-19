@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD330 - Week 03 | Exercises | Objects and Events</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <a href="javascript:void(0)" onclick="goBack()"> &larr; Back</a>
+    <h1>WDD330 - Week 3</h1>
+  </header>
+
+  <main>
+    <h1>Week 03</h1>
+    <h2>Javascript Objects vs Javascript Classes</h2>
+    <p>Although both may look very similar in the implementation, the concept of Classes and Objects in Javascript are very distinct.</p>
+
+    <h3>Javascript Objects</h3>
+    <blockquote>
+      Basically, javaScript objects are containers for <strong>named values</strong> called properties or methods, and a <strong>method</strong> is a function stored as a property.
+    </blockquote>
+    <p>An example of Object would be:</p>
+    <div id="editor3JS" class="editor">const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+}; 
+    </div>
+
+    <h3>Javascript Classes</h3>
+    <p>ECMAScript 2015, also known as ES6, introduced JavaScript Classes. JavaScript Classes are templates for JavaScript Objects.</p>
+    <blockquote>
+      A JavaScript class is <strong>not</strong> an object. It is a <strong>template</strong> for JavaScript objects.
+    </blockquote>
+
+    <p>An example of Javascript Class would be:</p>
+    <div id="editor4JS" class="editor">class Person {
+  constructor(id, firstName, lastName) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const person1 = new Person(5566, "John", "Doe");
+const person2 = new Person(7788, "Walter", "White");
+
+console.log(person1.id); // Will print 5566
+console.log(person2.id); // Will print 7788
+console.log(person1.fullName()); // Will print 'John Doe'
+console.log(person2.fullName()); // Will print 'Walter White'
+    </div>
+
+    
+
+    <hr>
+    <h2>What is an Event?</h2>
+    <p>
+      Every time that interaction happens with a web document, an event is triggered. The events can be even triggered
+      by a browser or by a user. The javascript syntax is based on the event itself (mouseenter, mousemove, mousedown,
+      mouseup, click, unload, load) with the addition of the prefix 'on' (onmouseenter, onmousemove, onmousedown,
+      onmouseup, onclick, onunload, onload)
+    </p>
+    <h2>Event management</h2>
+    <p>The main parts of an event management are:</p>
+
+    <ul>
+      <li>Handlers</li>
+      <li>Triggers</li>
+      <li>Default Handlers</li>
+    </ul>
+    <hr>
+    <h3>Event Handlers</h3>
+    <ul class="unstyled">
+      <li>
+        <p>The event handler is a function that is executed when an event is triggered. This handler should be attached
+          to an HTML element that will be the trigger. Consider the following example:</p>
+
+        <pre></pre>
+        <div id="editor1HTML" class="editor"></div>
+        <div id="editor1JS" class="editor"></div>
+        <button id="btn1" onclick="showAlert()">Click this button</button>
+      </li>
+    </ul>
+    <hr>
+    <h4>addEventListener(event, function, boolean)</h4>
+    <ul class="unstyled">
+      <li>
+        <p>This method allows you to attach an event to a DOM Node. The first param defines the event type, the second is the function tp be executed, in other words, the event handler, and the third event is a boolean that defines in which event propagation phase should occur.</p>
+ 
+        <div id="editor2HTML" class="editor"></div>
+        <div id="editor2JS" class="editor"></div>
+        <button id="btn2">AddEventListener Example</button>
+      </li>
+    </ul>
+    <h4>removeEventListener(event, function, boolean)</h4>
+    <ul class="unstyled">
+      <li>
+        <p>This method allows you to dettach an event from a DOM Node. The first param defines the event type, the second is the function tp be executed, in other words, the event handler, and the third event is a boolean that defines in which event propagation phase should occur.</p>
+        <p>Is the opposite from the addEventListener, if you click the button below, it will remove the previous event and the button won't listen to the click anymore unless you reload the page.</p>
+        <p>Try to click in the button below, and then click on the "AddEventListener Example".</p>
+ 
+        <button id="btn2" onclick="removeEvent()">Remove Event from "AddEventListener Example"</button>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Created by &copy; Rafael Almeida, 2020</p>
+  </footer>
+
+
+  <script src="../../js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q=="
+    crossorigin="anonymous"></script>
+  <script src="js/index.js">
+
+
+
+  </script>
+
+</body>
+
+</html>
