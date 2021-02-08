@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-list-item v-for="(study, index) in studies" :key="`${study.logo}_${index}`">
+  <v-list dense>
+    <v-list-item dense v-for="(study, index) in studies" :key="`${study.logo}_${index}`">
       <v-list-item-avatar two-line size="80">
         <v-img :src="`/images/companies/${study.logo}`" :alt="study.subtitle"></v-img>
       </v-list-item-avatar>
@@ -10,7 +10,7 @@
         <small>{{ study.period }}</small>
       </v-list-item-content>
     </v-list-item>
-  </div>
+  </v-list>
 </template>
 
 <script>

@@ -1,5 +1,7 @@
-# WDD 330 - Portfolio
+# Web Portfolio
+This repository is the base from my personal website.
+## Build Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2f24b779-b654-4031-9809-bf34a66b1ca1/deploy-status)](https://app.netlify.com/sites/rhenriquea/deploys)
 
-This repository is designtated to perform the assignments from BYU-Idaho WDD330 Web Frontend Development II class.
-
-You can access the website on <a target="_blank" href="https://rhenriquea.github.io/">https://rhenriquea.github.io/</a>
+### Website
+You can access the website on <a target="_blank" href="https://rhenriquea.netlify.app/">https://rhenriquea.netlify.app/</a>

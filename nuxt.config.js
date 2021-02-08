@@ -57,7 +57,7 @@ const config = {
 
   components: true,
 
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module', '@nuxtjs/device'],
 
   modules: ['@nuxtjs/style-resources', '@nuxtjs/markdownit', '@nuxtjs/vuetify'],
 
@@ -69,6 +69,11 @@ const config = {
         },
       },
     },
+  },
+
+  device: {
+    defaultUserAgent:
+      'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36',
   },
 
   // See https://github.com/markdown-it/markdown-it

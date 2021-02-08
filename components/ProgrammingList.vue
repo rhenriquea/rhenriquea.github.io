@@ -1,15 +1,17 @@
 <template>
   <v-card class="pa-2" flat>
-    <v-card-title class="text-center">Programming Skills</v-card-title>
-    <v-list-item v-for="skill in programming" :key="skill.icon">
-      <v-list-item-avatar two-line size="32">
-        <v-img :src="`/images/icons/${skill.icon}.png`"></v-img>
-      </v-list-item-avatar>
-      <v-list-item-content>
-        <v-list-item-title>{{ skill.title }}</v-list-item-title>
-        <v-list-item-subtitle>{{ skill.level }}</v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
+    <v-card-title class="pb-0">Programming Skills</v-card-title>
+    <v-list dense class="pa-0">
+      <v-list-item v-for="skill in programming" :key="skill.icon">
+        <v-list-item-avatar two-line size="32">
+          <v-img :src="`/images/icons/${skill.icon}.png`"></v-img>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title>{{ skill.title }}</v-list-item-title>
+          <v-list-item-subtitle>{{ skill.level }}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </v-card>
 </template>
 

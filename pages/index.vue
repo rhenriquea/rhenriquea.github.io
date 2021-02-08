@@ -2,8 +2,8 @@
   <div>
     <v-img :src="'/images/cover.jpg'"> </v-img>
 
-    <v-row no-gutters>
-      <v-col cols="12" sm="6" md="8">
+    <v-row>
+      <v-col cols="12" md="8">
         <v-card class="mt-3" flat>
           <v-card-title class="pa-0"><h2 class="display-1">Introduction</h2></v-card-title>
           <v-card-text class="pa-0">
@@ -20,11 +20,11 @@
             <h2 class="display-1">Know more</h2>
           </v-card-title>
 
-          <v-card-text class="pa-0">
+          <v-card-text class="pa-0 mb-3">
             <span class="subheading">Choose a category to navigate and know more about me</span>
           </v-card-text>
 
-          <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
+          <v-tabs v-model="tab" background-color="primary accent-4" center-active dark>
             <v-tab v-for="item in items" :key="item">
               {{ item }}
             </v-tab>
@@ -42,7 +42,7 @@
           </v-tabs-items>
         </v-card>
       </v-col>
-      <v-col cols="6" md="4">
+      <v-col cols="12" md="4">
         <languages-list />
         <programming-list />
         <graphic-design-list />

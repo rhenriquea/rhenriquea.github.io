@@ -1,21 +1,21 @@
 <template>
   <v-card>
     <v-img
-      class="white--text align-end"
+      class="white--text align-end mt-3 mb-3"
       src="/images/mission.jpg"
       height="320"
       position="top center"
     >
-      <v-card-title>FULLTIME VOLUNTEER </v-card-title>
     </v-img>
 
-    <v-card-subtitle class="pb-0">
+    <v-card-title class="pa-0 mb-2">Fulltime Volunteer</v-card-title>
+    <v-card-subtitle class="pa-0">
       BRAZIL PORTO ALEGRE SOUTH MISSION
       <v-divider />
       <small>April 2011 – April 2013</small>
     </v-card-subtitle>
 
-    <v-card-text class="text--primary">
+    <v-card-text class="text--primary pa-0">
       <ul>
         <li>Conducted and presided over meetings.</li>
         <li>Facilitated one on one training in communication skills.</li>

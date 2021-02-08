@@ -1,28 +1,33 @@
 <template>
-  <v-timeline align-top dense>
-    <v-timeline-item v-for="company in companies" :key="company.logo" small>
+  <v-timeline :dense="$device.isMobile" class="pa-1">
+    <v-timeline-item v-for="company in companies" :key="company.logo" small dense>
       <template v-slot:icon>
         <v-avatar>
           <img :src="`/images/companies/${company.logo}.png`" :alt="company.title" />
         </v-avatar>
       </template>
-      <div>
-        <div class="font-weight-normal">
-          <strong>{{ company.role }}</strong
-          ><v-btn class="py-0" :nuxt="false" color="primary" text :href="company.url"
-            >@ {{ company.title }}</v-btn
-          >
-        </div>
+      <template v-slot:opposite>
         <small>{{ company.period }}</small>
-        <ul
-          v-for="(responsability, index) in company.responsabilities"
-          :key="`${company.logo}_${index}`"
+      </template>
+      <v-card elevation="3">
+        <v-card-title class="pb-0">
+          {{ company.role }}
+        </v-card-title>
+        <v-btn small class="pa-1 ml-3" :nuxt="false" color="primary" text :href="company.url"
+          >@ {{ company.title }}</v-btn
         >
-          <li>
-            {{ responsability }}
-          </li>
-        </ul>
-      </div>
+
+        <v-card-text>
+          <ul
+            v-for="(responsability, index) in company.responsabilities"
+            :key="`${company.logo}_${index}`"
+          >
+            <li>
+              {{ responsability }}
+            </li>
+          </ul>
+        </v-card-text>
+      </v-card>
     </v-timeline-item>
   </v-timeline>
 </template>

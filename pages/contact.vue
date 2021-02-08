@@ -6,51 +6,39 @@
           <img src="/images/perfil.jpg" alt="Rafael de Almeida" />
         </v-avatar>
         <v-card-text>
-          <div>
+          <div class="text-h5 font-weight-medium">
             <strong align="center">Rafael Henrique de Almeida</strong>
           </div>
-          <div>
+          <div class="text-button font-weight-regular">
             <small>Frontend Engineer</small>
           </div>
           <div>Sluistraat 14, 5462CB</div>
           <div>Veghel, NL</div>
+          <div></div>
           <div>
-            <a href="mailto:rafa.almeida.js@gmail.com">rafa.almeida.js@gmail.com</a>
-          </div>
-          <div>
-            <a href="tel:+310683417049">+310683417049</a>
+            <a href="tel:+310683417049"></a>
           </div>
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="6" md="8">
+    <v-col sm="6" md="8">
       <v-card elevation="2" flat height="80vh">
         <v-card-title>Contact</v-card-title>
-        <v-card-text>
-          <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field
-              v-model="name"
-              :counter="10"
-              :rules="nameRules"
-              label="Name"
-              required
-            ></v-text-field>
+        <v-list>
+          <v-list-item v-for="contact in contacts" :key="contact.title">
+            <v-list-item-avatar>
+              <v-icon :class="contact.color" dark v-text="contact.icon"></v-icon>
+            </v-list-item-avatar>
 
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
+            <v-list-item-content>
+              <v-list-item-title v-text="contact.title"></v-list-item-title>
 
-            <v-textarea v-model="message" label="Message" required></v-textarea>
-
-            <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-              Send
-              <v-icon right>mdi-send</v-icon>
-            </v-btn>
-          </v-form>
-        </v-card-text>
+              <v-list-item-subtitle>
+                <a :href="contact.href">{{ contact.content }}</a>
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
       </v-card>
     </v-col>
   </v-row>
@@ -59,32 +47,22 @@
 <script>
 export default {
   data: () => ({
-    valid: true,
-    name: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+    contacts: [
+      {
+        color: 'blue',
+        icon: 'mdi-email',
+        href: 'tel:+310683417049',
+        title: 'Email',
+        content: 'rafa.almeida.js@gmail.com',
+      },
+      {
+        color: 'amber',
+        icon: 'mdi-phone',
+        href: 'mailto:rafa.almeida.js@gmail.com',
+        title: 'Phone',
+        content: '+310683417049',
+      },
     ],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-    ],
-    select: null,
-    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-    checkbox: false,
   }),
-
-  methods: {
-    validate() {
-      this.$refs.form.validate();
-    },
-    reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
-    },
-  },
 };
 </script>

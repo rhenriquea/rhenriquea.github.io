@@ -57,7 +57,7 @@
 
             <v-spacer></v-spacer>
 
-            <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon :href="icon.url">
+            <v-btn v-for="icon in icons" :key="icon.id" class="mx-4" dark icon :href="icon.url">
               <v-icon size="24px">
                 {{ icon.id }}
               </v-icon>

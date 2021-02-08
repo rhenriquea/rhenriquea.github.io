@@ -1,8 +1,11 @@
 <template>
   <div>
     <v-card>
-      <v-card-title class="pa-0 display-1">Drawings</v-card-title>
-      <v-divider class="mb-3"></v-divider>
+      <v-card-title class="pa-0 display-1 mt-5">
+        <v-sheet color="amber darken-4" elevation="1" rounded>
+          <span class="pa-16 white--text"> Drawings</span>
+        </v-sheet>
+      </v-card-title>
 
       <v-carousel height="400" hide-delimiter-background show-arrows-on-hover>
         <v-carousel-item
@@ -15,8 +18,11 @@
       </v-carousel>
     </v-card>
     <v-card class="mt-3">
-      <v-card-title class="pa-0 display-1">Videos</v-card-title>
-      <v-divider class="mb-3"></v-divider>
+      <v-card-title class="pa-0 display-1 mt-5">
+        <v-sheet color="amber darken-4" elevation="1" rounded>
+          <span class="pa-16 white--text"> Videos</span>
+        </v-sheet>
+      </v-card-title>
 
       <v-carousel height="400" hide-delimiter-background show-arrows-on-hover>
         <v-carousel-item v-for="(slide, i) in ytVideos" :key="i" class="text-center">
@@ -37,8 +43,6 @@
 <script>
 export default {
   data: () => ({
-    colors: ['indigo', 'warning', 'pink darken-2', 'red lighten-1', 'deep-purple accent-4'],
-    slides: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
     behanceImages: [
       { id: '1400_opt_1/585ea8112001827.600c5765b1c6f.jpg', position: 'bottom center' },
       { id: '1400/547132107481807.5fa858eddc644.jpg', position: 'center center' },
