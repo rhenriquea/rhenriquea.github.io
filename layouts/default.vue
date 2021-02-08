@@ -1,15 +1,20 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" color="gray">
     <v-sheet class="overflow-hidden">
       <v-app-bar dark flat color="primary">
         <v-container class="py-0 fill-height">
-          <v-app-bar-nav-icon @click="drawer = true" v-if="isMobile"></v-app-bar-nav-icon>
           <v-avatar class="mr-10" color="grey darken-1" size="32">
             <img src="/images/perfil.jpg" alt="Rafael de Almeida" />
           </v-avatar>
 
-          <v-btn v-for="link in links" :key="link" text v-if="!isMobile">
-            {{ link }}
+          <v-btn
+            v-for="(link, index) in links"
+            :key="`${link.name}_${index}`"
+            nuxt
+            text
+            :to="link.url"
+          >
+            {{ link.name }}
           </v-btn>
 
           <v-spacer></v-spacer>
@@ -21,49 +26,50 @@
           <Nuxt keep-alive />
         </v-container>
       </v-main>
-
-      <v-navigation-drawer v-model="drawer" absolute temporary>
-        <v-list nav dense>
-          <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Home</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Account</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
-
-      <v-footer dark padless absolute>
-        <v-card class="flex" flat tile>
-          <v-card-title>
-            <v-container class="py-0 fill-height">
-              <strong class="subheading">Get connected with us on social networks!</strong>
-
-              <v-spacer></v-spacer>
-
-              <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-                <v-icon size="24px">
-                  {{ icon }}
-                </v-icon>
-              </v-btn>
-            </v-container>
-          </v-card-title>
-
-          <v-card-text class="py-2 white--text text-center">
-            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-          </v-card-text>
-        </v-card>
-      </v-footer>
     </v-sheet>
+
+    <v-tooltip top>
+      <template v-slot:activator="{ on, attrs }">
+        <v-fab-transition>
+          <v-btn
+            v-bind="attrs"
+            v-on="on"
+            color="amber darken-4"
+            dark
+            bottom
+            fixed
+            right
+            fab
+            to="/contact"
+          >
+            <v-icon>mdi-email-send</v-icon>
+          </v-btn>
+        </v-fab-transition>
+      </template>
+      <span>Send message</span>
+    </v-tooltip>
+
+    <v-footer dark padless>
+      <v-card class="flex" flat tile>
+        <v-card-title class="blue-grey darken-4">
+          <v-container class="py-0 fill-height">
+            <span>Find more in my social networks!</span>
+
+            <v-spacer></v-spacer>
+
+            <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon :href="icon.url">
+              <v-icon size="24px">
+                {{ icon.id }}
+              </v-icon>
+            </v-btn>
+          </v-container>
+        </v-card-title>
+
+        <v-card-text class="py-2 white--text text-center" color="black">
+          <strong>&copy; Rafael de Almeida </strong>{{ new Date().getFullYear() }}
+        </v-card-text>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
@@ -72,14 +78,18 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
-    links: ['Curriculum', 'About Me', 'another'],
+    icons: [
+      { id: 'mdi-github', url: 'https://github.com/rhenriquea' },
+      { id: 'mdi-linkedin', url: 'https://www.linkedin.com/in/rhenriquea/' },
+      { id: 'mdi-behance', url: 'https: //www.behance.net/rhenriquea' },
+      { id: 'mdi-medium', url: 'https://rhenriquea.medium.com/' },
+      { id: 'mdi-twitter', url: 'https://twitter.com/therafahenrique' },
+      { id: 'mdi-instagram', url: 'https://www.instagram.com/rafael_alm3ida_/' },
+    ],
+    links: [
+      { name: 'Home', url: '/' },
+      { name: 'Contact', url: '/contact' },
+    ],
   }),
-
-  computed: {
-    isMobile() {
-      return false;
-    },
-  },
 };
 </script>

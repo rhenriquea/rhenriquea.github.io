@@ -61,10 +61,6 @@ const config = {
 
   modules: ['@nuxtjs/style-resources', '@nuxtjs/markdownit', '@nuxtjs/vuetify'],
 
-  styleResources: {
-    scss: ['./assets/styles/vars/*.scss'],
-  },
-
   vuetify: {
     theme: {
       themes: {
