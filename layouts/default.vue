@@ -88,6 +88,10 @@ export default {
     ],
     links: [
       { name: 'Home', url: '/' },
+      { name: 'Experience', url: '/experience' },
+      { name: 'Education', url: '/education' },
+      { name: 'Leadership', url: '/leadership' },
+      { name: 'Hobbies', url: '/hobbies' },
       { name: 'Contact', url: '/contact' },
     ],
   }),

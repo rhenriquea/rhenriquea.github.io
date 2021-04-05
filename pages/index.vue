@@ -24,22 +24,11 @@
             <span class="subheading">Choose a category to navigate and know more about me</span>
           </v-card-text>
 
-          <v-tabs v-model="tab" background-color="primary accent-4" center-active dark>
-            <v-tab v-for="item in items" :key="item">
-              {{ item }}
-            </v-tab>
-          </v-tabs>
-
-          <v-tabs-items v-model="tab">
-            <v-tab-item v-for="item in items" :key="item">
-              <v-card flat>
-                <experience-details v-if="item === 'Experience'" />
-                <education-details v-if="item === 'Education'" />
-                <hobbies-details v-if="item === 'Hobbies'" />
-                <leadership-details v-if="item === 'Leadership'" />
-              </v-card>
-            </v-tab-item>
-          </v-tabs-items>
+          <div class="d-flex flex-column flex-sm-row align-center justify-sm-space-around">
+            <div v-for="n in 5">
+              <v-btn class="mb-3" outlined color="primary">Example</v-btn>
+            </div>
+          </div>
         </v-card>
       </v-col>
       <v-col cols="12" md="4">
@@ -72,7 +61,7 @@ export default {
   },
   data: () => ({
     tab: null,
-    items: ['Experience', 'Education', 'Leadership', 'Hobbies'],
+    items: ['Education', 'Leadership', 'Hobbies'],
   }),
 };
 </script>
