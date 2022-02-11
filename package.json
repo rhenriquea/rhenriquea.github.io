@@ -50,7 +50,7 @@
     "jest": "^26.5.0",
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-div": "^1.1.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "prettier": "^2.1.2",
     "sass-loader": "^10.1.0",
     "stylelint": "^13.7.2",
