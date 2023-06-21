@@ -20,7 +20,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
-    "nuxt": "^2.14.6",
+    "nuxt": "^3.4.3",
     "sass-mq": "^5.0.1",
     "vue": "^2.6.12",
     "vue-content-placeholders": "^0.2.1",
