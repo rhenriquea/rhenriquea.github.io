@@ -1,4 +1,4 @@
-name: cd
+name: Publish GH Pages
 
 on: [push, pull_request]
 
@@ -24,6 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        env:
+          YARN_IGNORE_NODE: 1
 
       - name: Build
         run: yarn run build
