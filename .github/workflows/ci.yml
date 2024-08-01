@@ -4,30 +4,32 @@ on: [push, pull_request]
 
 jobs:
   cd:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        node: [14]
+        node: [16.19.1]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: Setup node env
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install dependencies
-        run: yarn
+      - name: Enable Corepack
+        run: corepack enable
 
-      - name: Generate
-        run: yarn run generate
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./build
