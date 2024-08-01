@@ -34,6 +34,7 @@ jobs:
         run: yarn run build
         env:
           YARN_IGNORE_NODE: 1
+          CI: false
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
