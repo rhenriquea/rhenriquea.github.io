@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAFAEL ALMEIDA | PORTFOLIO_OS_V3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Space+Grotesk:wght@300;400;700&family=Monoton&family=Playfair+Display:wght@700;800;900&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#ffb1c1",
+              "on-tertiary-container": "#3c2500",
+              "surface-container-highest": "#3d2d52",
+              "surface-dim": "#1b0b2f",
+              "surface-container-lowest": "#150529",
+              "inverse-on-surface": "#39294e",
+              "on-primary": "#00363a",
+              "outline-variant": "#5b3f45",
+              "surface-bright": "#423257",
+              "surface-container-high": "#322247",
+              "on-surface": "#eedcff",
+              "surface-container": "#27183c",
+              "on-primary-fixed-variant": "#004f54",
+              "error-container": "#93000a",
+              "surface-variant": "#3d2d52",
+              "on-secondary-container": "#fff6f6",
+              "on-background": "#eedcff",
+              "on-tertiary-fixed-variant": "#633f00",
+              "tertiary-fixed": "#ffddb4",
+              "tertiary-fixed-dim": "#ffb955",
+              "primary-fixed-dim": "#00dbe9",
+              "on-primary-fixed": "#002022",
+              "on-secondary": "#66002a",
+              "on-secondary-fixed-variant": "#8f003e",
+              "secondary": "#ffb1c1",
+              "on-secondary-fixed": "#3f0017",
+              "primary": "#00dbe9",
+              "inverse-surface": "#eedcff",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "on-primary-container": "#002f33",
+              "primary-container": "#00a0aa",
+              "surface-tint": "#00dbe9",
+              "on-error": "#690005",
+              "surface": "#1b0b2f",
+              "outline": "#ab888e",
+              "tertiary": "#ffb955",
+              "on-tertiary-fixed": "#291800",
+              "background": "#1b0b2f",
+              "on-tertiary": "#452b00",
+              "on-surface-variant": "#e4bdc3",
+              "inverse-primary": "#006970",
+              "primary-fixed": "#7df4ff",
+              "tertiary-container": "#c68200",
+              "secondary-container": "#e00266",
+              "secondary-fixed": "#ffd9df",
+              "surface-container-low": "#231437"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"],
+              "chrome": ["Monoton"],
+              "display": ["Playfair Display"],
+              "mono-dm": ["DM Mono"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            animation: {
+              'flicker': 'flicker 1.5s infinite alternate',
+              'star-pulse': 'star-pulse 3s infinite ease-in-out',
+            },
+            keyframes: {
+              flicker: {
+                '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': { opacity: '1' },
+                '20%, 24%, 55%': { opacity: '0.8' },
+              },
+              'star-pulse': {
+                '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                '50%': { opacity: '1', transform: 'scale(1.2)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* === V2 Base Styles === */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .crt-scanlines {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+        }
+        .perspective-grid {
+            perspective: 400px;
+            background: linear-gradient(to bottom, transparent 20%, #1b0b2f 100%);
+        }
+        .grid-lines {
+            width: 300%;
+            height: 300%;
+            position: absolute;
+            bottom: -100%;
+            left: -100%;
+            background-image:
+                linear-gradient(to right, rgba(0, 240, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.3) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: rotateX(75deg);
+        }
+        .chrome-text {
+            background: linear-gradient(
+                to bottom,
+                #fff 0%,
+                #fff 45%,
+                #777 50%,
+                #444 55%,
+                #111 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 45, 123, 0.5));
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .neon-flicker {
+            animation: flicker 2s infinite;
+        }
+        .vhs-tape-window {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+        }
+        .starfield {
+            background-image: radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+                              radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(1.5px 1.5px at 50px 160px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(1.5px 1.5px at 160px 120px, #ddd, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+        .poster-yellow { background-color: #f8a826; }
+        .poster-cyan { background-color: #00f0ff; }
+        .poster-pink { background-color: #ff2d7b; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* === V1 CSS Variables === */
+        :root {
+            --bg-deep: #0d0221;
+            --bg-mid: #150833;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --cyan: #00e5ff;
+            --pink: #ff2d7b;
+            --amber: #f5a623;
+            --purple: #b44dff;
+            --green: #39ff8e;
+            --text: #e8e0f0;
+            --text-dim: rgba(232, 224, 240, 0.5);
+            --text-muted: rgba(232, 224, 240, 0.3);
+            --font-display: "Playfair Display", serif;
+            --font-body: "Outfit", sans-serif;
+            --font-mono: "DM Mono", monospace;
+            --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 60px rgba(0, 229, 255, 0.15);
+            --glow-pink: 0 0 20px rgba(255, 45, 123, 0.4), 0 0 60px rgba(255, 45, 123, 0.15);
+            --glow-amber: 0 0 20px rgba(245, 166, 35, 0.3);
+        }
+
+        /* === Scrollbar === */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0d0221; }
+        ::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 0; }
+
+        /* === Cursor Blink (Hero Typewriter) === */
+        .cursor {
+            animation: blink 0.8s step-end infinite;
+            color: var(--pink);
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* === Tracklist (V1 cards, brutalist border-radius: 0) === */
+        .tracklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .track {
+            display: grid;
+            grid-template-columns: 48px 1fr auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 0;
+        }
+        .track:hover {
+            background: var(--bg-card-hover);
+        }
+        .track.active {
+            background: var(--bg-card);
+            border-left: 4px solid var(--cyan);
+        }
+        .track-num {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pink);
+            text-align: center;
+        }
+        .track-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .track-info .role {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--cyan);
+        }
+        .track-info .location {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .track-duration {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+        .track-details {
+            display: none;
+            grid-column: 1 / -1;
+            padding: 1rem 0 0.5rem 3.5rem;
+        }
+        .track.active .track-details {
+            display: block;
+        }
+        .track-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem;
+        }
+        .track-details li {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            padding: 0.4rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .track-details li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--pink);
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tech-tag {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            border: 1px solid rgba(180, 77, 255, 0.3);
+            border-radius: 0;
+            color: var(--purple);
+            background: rgba(180, 77, 255, 0.06);
+            letter-spacing: 0.04em;
+        }
+        .now-playing {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--green);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+        }
+        .eq-bars {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 2px;
+            height: 12px;
+        }
+        .eq-bar {
+            width: 3px;
+            background: var(--green);
+            border-radius: 0;
+            animation: eqBounce 0.8s ease-in-out infinite alternate;
+        }
+        .eq-bar:nth-child(1) { height: 4px; animation-delay: 0s; }
+        .eq-bar:nth-child(2) { height: 10px; animation-delay: 0.15s; }
+        .eq-bar:nth-child(3) { height: 6px; animation-delay: 0.3s; }
+        @keyframes eqBounce { 0% { height: 3px; } 100% { height: 12px; } }
+
+        /* === Education (V1, brutalist) === */
+        .edu-inner { max-width: 1100px; margin: 0 auto; }
+        .edu-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .edu-scroll::-webkit-scrollbar { height: 4px; }
+        .edu-scroll::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 0; }
+        .edu-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            transition: all 0.3s;
+        }
+        .edu-card:hover { border-color: rgba(255, 255, 255, 0.15); }
+        .edu-card.featured {
+            border-color: rgba(245, 166, 35, 0.3);
+            flex: 0 0 340px;
+        }
+        .edu-card.featured .edu-degree { color: var(--amber); }
+        .edu-type {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .edu-degree {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .edu-school { font-size: 0.9rem; color: var(--cyan); margin-bottom: 0.3rem; }
+        .edu-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+        .edu-level { font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem; font-style: italic; }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0;
+            background: var(--bg-card);
+            font-size: 0.85rem;
+        }
+        .cert-icon { font-size: 1.2rem; flex-shrink: 0; }
+        .cert-name { color: var(--text-dim); font-size: 0.8rem; }
+        .cert-name strong { color: #fff; display: block; font-weight: 500; }
+
+        /* === Konami Overlay === */
+        .konami-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(13, 2, 33, 0.97);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: flashIn 0.5s ease-out;
+        }
+        .konami-overlay.show { display: flex; }
+        @keyframes flashIn {
+            0% { opacity: 0; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .konami-title {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--amber);
+            text-shadow: 0 0 60px rgba(245, 166, 35, 0.5);
+            animation: konamiPulse 1s ease-in-out infinite alternate;
+        }
+        @keyframes konamiPulse {
+            0% { text-shadow: 0 0 60px rgba(245, 166, 35, 0.3); }
+            100% { text-shadow: 0 0 80px rgba(245, 166, 35, 0.6), 0 0 120px rgba(255, 45, 123, 0.3); }
+        }
+        .konami-text {
+            font-family: var(--font-mono);
+            color: var(--cyan);
+            font-size: 1rem;
+            text-align: center;
+        }
+        .konami-close {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            margin-top: 2rem;
+            text-decoration: underline;
+        }
+
+        /* === Scroll Reveal === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Footer (V1 elements, brutalist) === */
+        .footer-langs {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .lang-badge {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-flag { font-size: 1.1rem; }
+
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .track {
+                grid-template-columns: 36px 1fr auto;
+                padding: 0.8rem 1rem;
+                gap: 0.6rem;
+            }
+            .track-num { font-size: 1rem; }
+            .track-details { padding-left: 2.5rem; }
+            .edu-card { flex: 0 0 260px; }
+            .edu-card.featured { flex: 0 0 280px; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .konami-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body class="bg-[#150529] text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- CRT Overlay -->
+<div class="fixed inset-0 z-[100] crt-scanlines opacity-50 pointer-events-none"></div>
+
+<!-- Top Navigation (V2) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-black/60 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(21,5,41,0.8)]">
+<div class="text-2xl font-black italic bg-gradient-to-b from-white via-slate-400 to-slate-600 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(255,45,123,0.5)]">
+        PORTFOLIO OS V3
+    </div>
+<div class="hidden md:flex gap-10 items-center font-['Newsreader'] italic uppercase tracking-wider">
+<a class="text-[#00f0ff] border-b-2 border-[#00f0ff] pb-1 shadow-[0_5px_15px_rgba(0,240,255,0.4)]" href="#profile">SYSTEM</a>
+<a class="text-slate-400 font-mono text-xs tracking-tighter hover:text-white transition-colors" href="#mixtape">TERMINAL</a>
+<a class="text-slate-400 font-mono text-xs tracking-tighter hover:text-white transition-colors" href="#arcade">ARCADE</a>
+<a class="text-slate-400 font-mono text-xs tracking-tighter hover:text-white transition-colors" href="#vhs">ARCHIVE</a>
+<a class="text-slate-400 font-mono text-xs tracking-tighter hover:text-white transition-colors" href="#education">CREDITS</a>
+<a class="text-slate-400 font-mono text-xs tracking-tighter hover:text-white transition-colors" href="#contact">COORDINATES</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#ff2d7b] hover:brightness-125 transition-all cursor-pointer">settings_ethernet</span>
+<span class="material-symbols-outlined text-[#ff2d7b] hover:brightness-125 transition-all cursor-pointer">power_settings_new</span>
+</div>
+<div class="bg-gradient-to-r from-transparent via-[#00f0ff]/20 to-transparent h-[1px] w-full absolute bottom-0"></div>
+</nav>
+
+<!-- 1. Hero (V2 design + V1 typewriter) -->
+<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+<div class="absolute inset-0 starfield opacity-40 animate-star-pulse"></div>
+<div class="absolute inset-0 perspective-grid">
+<div class="grid-lines"></div>
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-primary shadow-[0_0_30px_#00dbe9] z-10"></div>
+</div>
+<div class="relative z-10 text-center px-4">
+<h1 class="chrome-text text-6xl md:text-[10rem] tracking-tighter leading-none mb-4 italic">
+            RAFAEL ALMEIDA
+        </h1>
+<div class="font-label text-xl md:text-2xl text-primary tracking-[0.5em] uppercase mb-12 flex items-center justify-center gap-4 neon-flicker">
+<span class="text-[#ff2d7b]">[</span>
+<span id="typed-text" class="text-white"></span><span class="cursor">|</span>
+<span class="text-[#ff2d7b]">]</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<a href="#mixtape" class="bg-[#00f0ff] text-black px-12 py-5 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] active:scale-95 no-underline text-center">
+                VIEW MY WORK
+            </a>
+<a href="#contact" class="border-2 border-[#ff2d7b] text-[#ff2d7b] px-12 py-5 font-label font-bold uppercase tracking-widest hover:bg-[#ff2d7b]/10 transition-all shadow-[0_0_20px_rgba(255,45,123,0.3)] active:scale-95 no-underline text-center">
+                GET IN TOUCH
+            </a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-[#ff2d7b] text-4xl">expand_more</span>
+</div>
+</section>
+
+<!-- 2. About Me: The Player Profile (V2) -->
+<section class="bg-surface-container-low py-32 px-6 md:px-20 border-t border-outline-variant/10" id="profile">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="bg-surface-container-high p-6 border-l-[12px] poster-pink shadow-2xl">
+<div class="aspect-square bg-black relative overflow-hidden ring-4 ring-[#322247] shadow-inner">
+<img alt="Rafael Almeida Portrait" class="w-full h-full object-cover grayscale contrast-150" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5gH3NWZBDfjTGflXeyS10_-tIwiwiQDTRLgZ2w2622FmjeP0bHmusagvD2qQWZOJWGcGrFKJC8C1a1vQ0rUfU0S8QdXijRWj4c66lD-JKWEOsIHjynMFZvcr44ZY7IWcSI0WVtOJL0P25fVrRG01zXfQ8pgxPNXj5gAB4mzMbJrRBwgLpKbyh6r_poNpNoWsbVoaKtJQNGin_kxuS_x90lQGnGb5zsP3FzUdWomXFoUpzp2XF9nqSYibmPQtR37E7-Mj8-2qa94k"/>
+<div class="absolute inset-0 bg-[#ff2d7b]/20 mix-blend-overlay"></div>
+</div>
+<div class="mt-8 font-body text-on-surface-variant leading-relaxed">
+<p class="text-lg font-medium border-l-2 border-[#00f0ff] pl-4 italic">RAFAEL_ALMEIDA_LOG: Engineering leader specializing in hyperscale cloud architectures. Passionate about AI integration and developer experience. Building the future from the analog roots of the digital revolution.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-10">
+<div class="relative h-72 border-2 border-[#00f0ff]/30 bg-black p-6 shadow-[inset_0_0_40px_rgba(0,240,255,0.1)]">
+<div class="absolute top-4 right-4 flex gap-2 items-center">
+<div class="w-3 h-3 rounded-full poster-pink animate-pulse shadow-[0_0_10px_#ff2d7b]"></div>
+<span class="font-label text-xs uppercase text-[#ff2d7b] font-bold">Signal Active</span>
+</div>
+<div class="w-full h-full opacity-20 flex items-center justify-center font-chrome text-5xl italic tracking-widest text-[#00f0ff]">
+                    [ COORDS ]
+                </div>
+<div class="absolute inset-0 p-10 flex flex-col justify-between">
+<div class="flex justify-between items-center border-b border-white/10 pb-4">
+<span class="font-label text-xs uppercase text-[#00f0ff] tracking-[0.3em] font-black">Location Trace</span>
+<span class="font-label text-xs uppercase text-[#f8a826]">1984 - 2025</span>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="text-center group cursor-pointer">
+<div class="text-[#ff2d7b] font-black font-chrome text-2xl group-hover:scale-125 transition-transform">SP</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold mt-1">Sao Paulo</div>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="text-[#00f0ff] font-black font-chrome text-2xl group-hover:scale-125 transition-transform">PD</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold mt-1">Padova</div>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="text-[#f8a826] font-black font-chrome text-2xl group-hover:scale-125 transition-transform">LD</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold mt-1">London</div>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="text-[#ff2d7b] font-black font-chrome text-2xl group-hover:scale-125 transition-transform">AMS</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold mt-1">Netherlands</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-1 bg-surface-container-high py-6 px-8 border-l-[6px] poster-yellow shadow-lg">
+<div class="text-black font-chrome text-4xl italic font-black">10+</div>
+<div class="font-label text-xs uppercase tracking-widest text-on-surface font-black mt-2">Years XP</div>
+</div>
+<div class="flex-1 bg-surface-container-high py-6 px-8 border-l-[6px] poster-cyan shadow-lg">
+<div class="text-black font-chrome text-4xl italic font-black">08</div>
+<div class="font-label text-xs uppercase tracking-widest text-on-surface font-black mt-2">Companies</div>
+</div>
+<div class="flex-1 bg-surface-container-high py-6 px-8 border-l-[6px] poster-pink shadow-lg">
+<div class="text-black font-chrome text-4xl italic font-black">04</div>
+<div class="font-label text-xs uppercase tracking-widest text-on-surface font-black mt-2">Languages</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3. Experience Timeline: The Mixtape (V2 wrapper + V1 JS cards) -->
+<section class="py-32 px-6 bg-[#150529] overflow-hidden" id="mixtape">
+<div class="max-w-4xl mx-auto">
+<div class="flex flex-col items-center mb-20">
+<div class="w-80 mb-10 text-[#ff2d7b] drop-shadow-[0_0_15px_rgba(255,45,123,0.4)]">
+<svg fill="currentColor" viewBox="0 0 100 60">
+<rect fill="#322247" height="60" rx="4" width="100"></rect>
+<rect fill="#000" height="25" rx="2" width="80" x="10" y="10"></rect>
+<circle cx="30" cy="45" fill="#ff2d7b" fill-opacity="0.4" r="10"></circle>
+<circle cx="70" cy="45" fill="#ff2d7b" fill-opacity="0.4" r="10"></circle>
+<rect fill="#1b0b2f" height="8" rx="1" width="50" x="25" y="41"></rect>
+</svg>
+</div>
+<div class="poster-yellow px-8 py-4 -rotate-2 shadow-[8px_8px_0_#ff2d7b] mb-6">
+<h2 class="font-headline text-5xl italic font-black text-black uppercase tracking-tighter">TRACKLIST: CAREER_SESSIONS</h2>
+</div>
+<div class="flex items-center gap-3 text-[#00f0ff] font-label uppercase tracking-[0.4em] text-sm neon-flicker">
+<span class="animate-pulse">● NOW PLAYING: ESSENT</span>
+<div class="flex gap-1 h-4 items-end">
+<div class="w-1.5 bg-[#00f0ff] h-full animate-[bounce_1s_infinite]"></div>
+<div class="w-1.5 bg-[#00f0ff] h-2/3 animate-[bounce_1.2s_infinite]"></div>
+<div class="w-1.5 bg-[#00f0ff] h-1/2 animate-[bounce_0.8s_infinite]"></div>
+</div>
+</div>
+</div>
+<!-- V1's JS-generated tracklist cards go here -->
+<div class="tracklist reveal" id="tracklist"></div>
+</div>
+</section>
+
+<!-- 4. Skills Arcade: Power-ups (V2) -->
+<section class="py-32 px-6 bg-surface-container-low" id="arcade">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 flex flex-col items-center md:items-start">
+<h2 class="font-label text-2xl text-[#00f0ff] uppercase tracking-[0.6em] mb-6 font-black italic">Select Your Power-up</h2>
+<div class="h-2 w-48 poster-cyan shadow-[0_0_20px_#00f0ff]"></div>
+</div>
+<div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+<!-- Card 1 -->
+<div class="bg-black relative group hover:-translate-y-4 transition-all duration-300 cursor-pointer border border-white/5 shadow-2xl overflow-hidden">
+<div class="h-6 poster-cyan"></div>
+<div class="p-8">
+<span class="material-symbols-outlined text-[#00f0ff] mb-6 text-4xl neon-flicker">cloud</span>
+<h3 class="font-headline text-2xl font-black mb-6 italic text-white">Cloud & Infra</h3>
+<div class="space-y-3">
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">AWS / Azure / GCP</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Kubernetes</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Terraform</div>
+</div>
+</div>
+<div class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-chrome text-xs text-[#00f0ff] italic">LVL 99</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-black relative group hover:-translate-y-4 transition-all duration-300 cursor-pointer border border-white/5 shadow-2xl overflow-hidden">
+<div class="h-6 poster-pink"></div>
+<div class="p-8">
+<span class="material-symbols-outlined text-[#ff2d7b] mb-6 text-4xl neon-flicker">code</span>
+<h3 class="font-headline text-2xl font-black mb-6 italic text-white">Frontend</h3>
+<div class="space-y-3">
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">React / Next.js</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Tailwind CSS</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">TypeScript</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-black relative group hover:-translate-y-4 transition-all duration-300 cursor-pointer border border-white/5 shadow-2xl overflow-hidden">
+<div class="h-6 poster-yellow"></div>
+<div class="p-8">
+<span class="material-symbols-outlined text-[#f8a826] mb-6 text-4xl neon-flicker">database</span>
+<h3 class="font-headline text-2xl font-black mb-6 italic text-white">Backend</h3>
+<div class="space-y-3">
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Node.js / Go</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">PostgreSQL</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">GraphQL</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-black relative group hover:-translate-y-4 transition-all duration-300 cursor-pointer border border-white/5 shadow-2xl overflow-hidden">
+<div class="h-6 bg-purple-500"></div>
+<div class="p-8">
+<span class="material-symbols-outlined text-purple-400 mb-6 text-4xl neon-flicker">psychology</span>
+<h3 class="font-headline text-2xl font-black mb-6 italic text-white">AI & ML</h3>
+<div class="space-y-3">
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">LLM Engineering</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Vertex AI</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">LangChain</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-black relative group hover:-translate-y-4 transition-all duration-300 cursor-pointer border border-white/5 shadow-2xl overflow-hidden">
+<div class="h-6 bg-emerald-500"></div>
+<div class="p-8">
+<span class="material-symbols-outlined text-emerald-400 mb-6 text-4xl neon-flicker">groups</span>
+<h3 class="font-headline text-2xl font-black mb-6 italic text-white">Leadership</h3>
+<div class="space-y-3">
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Mentoring</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Agile Flow</div>
+<div class="text-[11px] font-label uppercase text-on-surface-variant font-bold tracking-widest border-b border-white/5 pb-1">Architecture</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5. Impact Highlights: The VHS Collection (V2 design + V1 content) -->
+<section class="py-32 px-6 bg-[#150529] overflow-hidden" id="vhs">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-8 mb-24">
+<div class="poster-pink p-4 shadow-[10px_10px_0_#00f0ff]">
+<span class="material-symbols-outlined text-black text-6xl font-black">movie</span>
+</div>
+<h2 class="font-chrome text-6xl md:text-8xl font-black italic text-white tracking-tighter drop-shadow-[0_0_20px_rgba(0,240,255,0.5)]">IMPACT_TAPE</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-16">
+<!-- VHS Card 1: Vendor Eliminated -->
+<div class="relative bg-black border-r-[12px] border-[#ff2d7b] group hover:scale-105 transition-transform duration-500 shadow-2xl">
+<div class="aspect-[2/3] p-8 flex flex-col justify-between">
+<div>
+<div class="bg-[#ff2d7b] text-black px-4 py-1 font-label text-xs inline-block mb-6 uppercase font-black tracking-widest shadow-[4px_4px_0_white]">Hi-Fi Stereo</div>
+<h3 class="font-chrome text-4xl font-extrabold italic text-white leading-tight uppercase underline decoration-4 underline-offset-8 decoration-[#00f0ff] mb-4">~$10K</h3>
+<p class="text-[#ff2d7b] font-label text-xs font-bold tracking-widest">VENDOR ELIMINATED</p>
+</div>
+<div class="vhs-tape-window h-32 border border-white/10 relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+<div class="w-24 h-1.5 bg-[#ff2d7b]/30 rounded-full animate-pulse"></div>
+</div>
+<div class="space-y-4">
+<div class="font-headline text-xl text-white font-black italic">"The one where we didn't need the vendor."</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">Built an in-house integration that replaced a third-party vendor entirely, saving the company approximately $10,000 and giving full ownership of the pipeline.</p>
+<div class="font-label text-xs text-[#ff2d7b] tracking-widest uppercase font-bold">Formula.Monks — Senior Engineer / Team Lead</div>
+</div>
+</div>
+</div>
+<!-- VHS Card 2: RAG AI -->
+<div class="relative bg-black border-r-[12px] border-[#00f0ff] group hover:scale-105 transition-transform duration-500 shadow-2xl">
+<div class="aspect-[2/3] p-8 flex flex-col justify-between">
+<div>
+<div class="bg-[#00f0ff] text-black px-4 py-1 font-label text-xs inline-block mb-6 uppercase font-black tracking-widest shadow-[4px_4px_0_white]">AI Master</div>
+<h3 class="font-chrome text-4xl font-extrabold italic text-white leading-tight uppercase underline decoration-4 underline-offset-8 decoration-[#ff2d7b] mb-4">RAG AI</h3>
+<p class="text-[#00f0ff] font-label text-xs font-bold tracking-widest">AI-POWERED CHAT</p>
+</div>
+<div class="vhs-tape-window h-32 border border-white/10 relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+<div class="w-24 h-1.5 bg-[#00f0ff]/30 rounded-full animate-pulse"></div>
+</div>
+<div class="space-y-4">
+<div class="font-headline text-xl text-white font-black italic">"The one where the chatbot got smart."</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">Pioneered an AI chat feature using Vertex AI with Retrieval-Augmented Generation, revolutionizing customer interaction with context-aware, intelligent responses.</p>
+<div class="font-label text-xs text-[#00f0ff] tracking-widest uppercase font-bold">Formula.Monks — Senior Engineer / Team Lead</div>
+</div>
+</div>
+</div>
+<!-- VHS Card 3: Refund System -->
+<div class="relative bg-black border-r-[12px] border-[#f8a826] group hover:scale-105 transition-transform duration-500 shadow-2xl">
+<div class="aspect-[2/3] p-8 flex flex-col justify-between">
+<div>
+<div class="bg-[#f8a826] text-black px-4 py-1 font-label text-xs inline-block mb-6 uppercase font-black tracking-widest shadow-[4px_4px_0_white]">Enterprise</div>
+<h3 class="font-chrome text-4xl font-extrabold italic text-white leading-tight uppercase underline decoration-4 underline-offset-8 decoration-white mb-4">SHIPPED</h3>
+<p class="text-[#f8a826] font-label text-xs font-bold tracking-widest">CUSTOMER REFUND SYSTEM</p>
+</div>
+<div class="vhs-tape-window h-32 border border-white/10 relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+<div class="w-24 h-1.5 bg-[#f8a826]/30 rounded-full animate-pulse"></div>
+</div>
+<div class="space-y-4">
+<div class="font-headline text-xl text-white font-black italic">"The one where customers got their money back."</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">Led two engineers to launch Jumbo Supermarkten's customer refund project, migrated legacy systems to SSR Nuxt with microservices and GraphQL architecture.</p>
+<div class="font-label text-xs text-[#f8a826] tracking-widest uppercase font-bold">Jumbo Supermarkten — Solutions Engineer</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6. Education & Certs (V1 content, brutalist styling) -->
+<section class="py-32 px-6 bg-black" id="education">
+<div class="edu-inner">
+<h2 class="font-label text-xs text-[#ff2d7b] uppercase tracking-[1em] text-center mb-24 font-black reveal">End Credits // Academic Standing</h2>
+<div class="edu-scroll reveal">
+<div class="edu-card featured">
+<div class="edu-type">Master's degree</div>
+<div class="edu-degree">MSc in Management (iMSM)</div>
+<div class="edu-school">University of Illinois Urbana-Champaign</div>
+<div class="edu-date">July 2023 — July 2024</div>
+<div class="edu-level">Wetenschappelijk Onderwijs</div>
+</div>
+<div class="edu-card">
+<div class="edu-type">Bachelor's degree</div>
+<div class="edu-degree">B.S. in Applied Technology</div>
+<div class="edu-school">Brigham Young University, Idaho</div>
+<div class="edu-date">Summer 2016 — Winter 2022</div>
+<div class="edu-level">Hoger Beroepsonderwijs</div>
+</div>
+<div class="edu-card">
+<div class="edu-type">Technical degree</div>
+<div class="edu-degree">Mechatronic Technician</div>
+<div class="edu-school">Paula Souza Center, Sao Paulo</div>
+<div class="edu-date">Sept 2008 — Dec 2010</div>
+<div class="edu-level">Middelbaar Beroepsonderwijs</div>
+</div>
+</div>
+<div class="cert-grid reveal">
+<div class="cert-card">
+<div class="cert-icon">📋</div>
+<div class="cert-name"><strong>Google Project Management</strong>Coursera — March 2022</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🔄</div>
+<div class="cert-name"><strong>Applied Scrum for PM</strong>Univ. of Maryland — June 2019</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🖥️</div>
+<div class="cert-name"><strong>Web Frontend</strong>BYU-Idaho — July 2022</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🎨</div>
+<div class="cert-name"><strong>Graphic Design</strong>BYU-Idaho — July 2022</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">⚙️</div>
+<div class="cert-name"><strong>Web Development</strong>BYU-Idaho — July 2022</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. Footer (V1 content + V2 styling) -->
+<footer class="bg-[#150529] py-24 border-t border-white/5" id="contact">
+<div class="w-full flex flex-col items-center justify-center gap-10 px-4 text-center">
+<div class="text-[#f8a826] font-black tracking-[0.4em] text-2xl chrome-text italic">RAFAEL_ALMEIDA</div>
+
+<!-- Real contact info from V1 -->
+<div class="reveal">
+<a href="mailto:rafa.almeida.js@gmail.com" class="text-[#00f0ff] font-mono text-sm hover:text-white transition-colors" style="text-shadow: 0 0 20px rgba(0,229,255,0.4);">rafa.almeida.js@gmail.com</a>
+<div class="font-mono text-xs text-on-surface-variant mt-2">+31 610838984 · Sittard, Limburg, NL</div>
+</div>
+
+<div class="flex gap-12 justify-center font-mono text-[10px] uppercase tracking-[0.2em] reveal">
+<a class="text-slate-500 hover:text-[#00f0ff] hover:tracking-[0.3em] transition-all duration-500 flex items-center gap-2" href="https://github.com/rhenriquea" target="_blank">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                GITHUB
+            </a>
+<a class="text-slate-500 hover:text-[#00f0ff] hover:tracking-[0.3em] transition-all duration-500 flex items-center gap-2" href="https://www.linkedin.com/in/rhenriquea" target="_blank">
+<span class="material-symbols-outlined text-sm">data_object</span>
+                LINKEDIN
+            </a>
+<a class="text-slate-500 hover:text-[#00f0ff] hover:tracking-[0.3em] transition-all duration-500 flex items-center gap-2" href="mailto:rafa.almeida.js@gmail.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+                EMAIL
+            </a>
+</div>
+
+<!-- Language badges from V1 -->
+<div class="footer-langs reveal">
+<div class="lang-badge"><span class="lang-flag">🇧🇷</span> Portuguese — Native</div>
+<div class="lang-badge"><span class="lang-flag">🇬🇧</span> English — C1</div>
+<div class="lang-badge"><span class="lang-flag">🇳🇱</span> Dutch — B1</div>
+<div class="lang-badge"><span class="lang-flag">🇪🇸</span> Spanish — Basic</div>
+</div>
+
+<!-- Konami code hint box (V2) -->
+<div class="bg-black p-10 border-2 border-[#ff2d7b]/20 text-center max-w-md w-full shadow-[0_0_50px_rgba(255,45,123,0.1)] relative overflow-hidden group reveal">
+<div class="absolute inset-0 bg-gradient-to-t from-[#ff2d7b]/5 to-transparent"></div>
+<div class="relative z-10">
+<div class="font-label text-[10px] text-[#f8a826] mb-4 uppercase tracking-[0.3em] font-black">Secret Command Required</div>
+<div class="font-chrome italic text-white text-xl opacity-80 group-hover:opacity-100 transition-opacity tracking-widest">↑ ↑ ↓ ↓ ← → ← → B A</div>
+</div>
+</div>
+
+<div class="font-mono text-[10px] uppercase tracking-[0.2em] leading-relaxed text-slate-500 max-w-2xl">
+            Built with coffee and synthwave
+            <br/>
+<span class="text-[#ff2d7b] font-black mt-4 block">V3.0.0 — MERGED_EDITION</span>
+</div>
+</div>
+</footer>
+
+<!-- 8. Konami Easter Egg Overlay (V1) -->
+<div class="konami-overlay" id="konami">
+<div class="konami-title">YOU WIN!</div>
+<div class="konami-text">
+You found the easter egg!<br/>I like the way you think. Let's talk.
+</div>
+<a href="mailto:rafa.almeida.js@gmail.com" class="bg-[#00f0ff] text-black px-8 py-4 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] no-underline mt-4">Send me an email</a>
+<div class="konami-close" onclick="document.getElementById('konami').classList.remove('show')">press any key to close</div>
+</div>
+
+<!-- 9. JavaScript Consolidation -->
+<script>
+// === Typewriter Effect (V1) ===
+const titles = [
+  "Cloud Architect",
+  "Engineering Leader",
+  "DevOps Engineer",
+  "AI Builder",
+  "Team Empowerer",
+];
+let titleIdx = 0, charIdx = 0, isDeleting = false;
+const typedEl = document.getElementById("typed-text");
+function typeWriter() {
+  const current = titles[titleIdx];
+  if (!isDeleting) {
+    typedEl.textContent = current.substring(0, charIdx + 1);
+    charIdx++;
+    if (charIdx === current.length) {
+      setTimeout(() => { isDeleting = true; typeWriter(); }, 2000);
+      return;
+    }
+    setTimeout(typeWriter, 80);
+  } else {
+    typedEl.textContent = current.substring(0, charIdx - 1);
+    charIdx--;
+    if (charIdx === 0) {
+      isDeleting = false;
+      titleIdx = (titleIdx + 1) % titles.length;
+      setTimeout(typeWriter, 400);
+      return;
+    }
+    setTimeout(typeWriter, 40);
+  }
+}
+typeWriter();
+
+// === Tracklist Builder (V1 — 8 jobs) ===
+const jobs = [
+  {
+    company: "Essent",
+    location: "Den Bosch, NL",
+    role: "DevOps Cloud Engineer",
+    period: "Jan 2025 — Present",
+    duration: "∞",
+    current: true,
+    bullets: [
+      "Lead cross-team Testing Community of Interest, defining strategy and coaching across squads.",
+      "Facilitate DDD-driven collaboration between domain teams to solve API integration challenges.",
+      "Manage AWS cloud infrastructure with CDK and CI/CD pipelines for scalable releases.",
+      "Lead Event Storming and Example Mapping sessions to align business goals with implementation.",
+    ],
+    tags: ["AWS", "CDK", "CI/CD", "DDD", "Event Storming", "Testing"],
+  },
+  {
+    company: "Volkswagen Pon FS",
+    location: "Amersfoort, NL",
+    role: "IT Cloud Engineer",
+    period: "Aug 2023 — Jan 2025",
+    duration: "1:06",
+    bullets: [
+      "Developed scalable cloud solutions across multiple Volkswagen affiliates.",
+      "Engineered GraphQL services with AWS AppSync, Lambda, S3, and DynamoDB.",
+      "Implemented automated testing with Jest for continuous integration pipelines.",
+      "Managed infrastructure with Terraform and Amazon CDK (TypeScript).",
+    ],
+    tags: ["AWS", "AppSync", "GraphQL", "Lambda", "Terraform", "Jest", "TypeScript"],
+  },
+  {
+    company: "Formula.Monks",
+    location: "Remote, USA",
+    role: "Senior Engineer / Team Lead",
+    period: "Jul 2022 — Jun 2024",
+    duration: "1:11",
+    bullets: [
+      "Built integration saving ~$10K by eliminating third-party vendor dependency.",
+      "Pioneered AI-powered chat with Vertex AI and RAG for context-aware responses.",
+      "Implemented ML workflows with Vertex AI, BigQuery, and AutoML models.",
+    ],
+    tags: ["Vertex AI", "RAG", "BigQuery", "AutoML", "GCP", "LangChain"],
+  },
+  {
+    company: "Jumbo Supermarkten",
+    location: "Veghel, NL",
+    role: "Solutions Engineer",
+    period: "Oct 2019 — Jul 2022",
+    duration: "2:09",
+    bullets: [
+      "Migrated legacy system to SSR Nuxt application with Microservices and GraphQL.",
+      "Led the customer Refund Project, managing two other engineers.",
+      "Engineered consistency across Promotions, Orders, and Basket projects.",
+    ],
+    tags: ["Nuxt", "Vue", "GraphQL", "Microservices", "Node.js"],
+  },
+  {
+    company: "KLM Royal Dutch Airlines",
+    location: "Amstelveen, NL",
+    role: "Senior Frontend Engineer",
+    period: "Oct 2018 — Oct 2019",
+    duration: "1:00",
+    bullets: [
+      "Worked in Sales Team following Scrum/Agile with 6 collaborators.",
+      "Developed Angular application with GraphQL integration.",
+      "Introduced the Design System integration from the Design Team.",
+    ],
+    tags: ["Angular", "GraphQL", "Scrum", "Design Systems"],
+  },
+  {
+    company: "Techifide",
+    location: "London, UK (Remote)",
+    role: "Medior Software Engineer",
+    period: "Sep 2016 — Oct 2018",
+    duration: "2:01",
+    bullets: [
+      "Developed project from scratch for managing employers and BIM projects.",
+      "Worked in async remote startup environment.",
+      "Built frontend with Angular and backend with Node.js.",
+    ],
+    tags: ["Angular", "Node.js", "BIM", "Startup"],
+  },
+  {
+    company: "GFT Technologies",
+    location: "Padova, IT / Sao Paulo",
+    role: "Junior Software Engineer",
+    period: "Sep 2015 — Sep 2016",
+    duration: "1:00",
+    bullets: [
+      "Started Java Springboot project with Primefaces in Padova, Italy.",
+      "Frontend consulting for Deutsche Bank using Angular 1.6.",
+      "Worked with international team applying Scrum for clients like Alba Leasing.",
+    ],
+    tags: ["Java", "Springboot", "Angular", "Scrum"],
+  },
+  {
+    company: "Sascar (Michelin Group)",
+    location: "Sao Paulo, Brazil",
+    role: "Junior Software Engineer",
+    period: "May 2014 — Dec 2014",
+    duration: "0:07",
+    bullets: [
+      "Support and data analysis for tracking system preventing thefts.",
+      "Created layouts for internal web system and dashboards.",
+    ],
+    tags: ["Data Analysis", "Dashboards", "Web Development"],
+  },
+];
+
+const tracklist = document.getElementById("tracklist");
+jobs.forEach((job, i) => {
+  const track = document.createElement("div");
+  track.className = "track" + (i === 0 ? " active" : "");
+  track.innerHTML = `
+    <div class="track-num">${String(i + 1).padStart(2, "0")}</div>
+    <div class="track-info">
+      <h3>${job.company} ${job.current ? '<span class="now-playing"><span class="eq-bars"><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span></span> Now playing</span>' : ""}</h3>
+      <div class="role">${job.role}</div>
+      <div class="location">${job.location} · ${job.period}</div>
+    </div>
+    <div class="track-duration">${job.duration}</div>
+    <div class="track-details">
+      <ul>${job.bullets.map((b) => "<li>" + b + "</li>").join("")}</ul>
+      <div class="tech-tags">${job.tags.map((t) => '<span class="tech-tag">' + t + "</span>").join("")}</div>
+    </div>`;
+  track.addEventListener("click", () => {
+    document.querySelectorAll(".track").forEach((t) => t.classList.remove("active"));
+    track.classList.add("active");
+  });
+  tracklist.appendChild(track);
+});
+
+// === Scroll Reveal Observer (V1) ===
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  },
+  { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+);
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+// === Konami Code Listener (V1) ===
+const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+let konamiIdx = 0;
+document.addEventListener("keydown", (e) => {
+  if (document.getElementById("konami").classList.contains("show")) {
+    document.getElementById("konami").classList.remove("show");
+    return;
+  }
+  if (e.keyCode === konamiCode[konamiIdx]) {
+    konamiIdx++;
+    if (konamiIdx === konamiCode.length) {
+      document.getElementById("konami").classList.add("show");
+      konamiIdx = 0;
+    }
+  } else {
+    konamiIdx = 0;
+  }
+});
+</script>
+</body></html>

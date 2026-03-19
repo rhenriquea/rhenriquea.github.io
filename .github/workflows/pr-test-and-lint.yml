@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [16.19.1]
+        node: [20]
 
     steps:
       - name: Checkout
@@ -27,8 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-        env:
-          YARN_IGNORE_NODE: 1
 
       - name: Run tests
         run: yarn test
