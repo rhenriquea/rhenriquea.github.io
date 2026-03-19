@@ -2,15 +2,15 @@ import { useState } from "react";
 import { jobs } from "../data/jobs";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
-export default function Tracklist() {
+const Tracklist: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
   const sectionRef = useScrollReveal<HTMLElement>();
 
   return (
-    <section className="py-32 px-6 bg-[#150529] overflow-hidden" id="mixtape" ref={sectionRef}>
+    <section className="py-32 px-6 bg-surface-container-lowest overflow-hidden" id="mixtape" ref={sectionRef}>
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col items-center mb-20">
-          <div className="w-80 mb-10 text-[#ff2d7b] drop-shadow-[0_0_15px_rgba(255,45,123,0.4)]">
+          <div className="w-80 mb-10 text-accent-pink drop-shadow-[0_0_15px_rgba(255,45,123,0.4)]">
             <svg fill="currentColor" viewBox="0 0 100 60">
               <rect fill="#322247" height="60" rx="4" width="100" />
               <rect fill="#000" height="25" rx="2" width="80" x="10" y="10" />
@@ -22,12 +22,12 @@ export default function Tracklist() {
           <div className="poster-yellow px-8 py-4 -rotate-2 shadow-[8px_8px_0_#ff2d7b] mb-6">
             <h2 className="font-headline text-5xl italic font-black text-black uppercase tracking-tighter">TRACKLIST: CAREER_SESSIONS</h2>
           </div>
-          <div className="flex items-center gap-3 text-[#00f0ff] font-label uppercase tracking-[0.4em] text-sm neon-flicker">
+          <div className="flex items-center gap-3 text-accent-cyan font-label uppercase tracking-[0.4em] text-sm neon-flicker">
             <span className="animate-pulse">● NOW PLAYING: ESSENT</span>
             <div className="flex gap-1 h-4 items-end">
-              <div className="w-1.5 bg-[#00f0ff] h-full animate-[bounce_1s_infinite]" />
-              <div className="w-1.5 bg-[#00f0ff] h-2/3 animate-[bounce_1.2s_infinite]" />
-              <div className="w-1.5 bg-[#00f0ff] h-1/2 animate-[bounce_0.8s_infinite]" />
+              <div className="w-1.5 bg-accent-cyan h-full animate-[bounce_1s_infinite]" />
+              <div className="w-1.5 bg-accent-cyan h-2/3 animate-[bounce_1.2s_infinite]" />
+              <div className="w-1.5 bg-accent-cyan h-1/2 animate-[bounce_0.8s_infinite]" />
             </div>
           </div>
         </div>
@@ -76,4 +76,6 @@ export default function Tracklist() {
       </div>
     </section>
   );
-}
+};
+
+export default Tracklist;

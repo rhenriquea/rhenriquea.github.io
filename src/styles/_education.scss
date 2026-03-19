@@ -1,0 +1,111 @@
+@use "variables" as *;
+
+.edu-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.edu-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar { height: 4px; }
+  &::-webkit-scrollbar-thumb { background: $purple; }
+}
+
+.edu-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  border: 1px solid $border-light;
+  padding: 1.5rem;
+  background: $bg-card;
+  transition: all 0.3s;
+
+  &:hover { border-color: $border-hover; }
+
+  &.featured {
+    border-color: rgba($amber, 0.3);
+    flex: 0 0 340px;
+
+    .edu-degree { color: $amber; }
+  }
+}
+
+.edu-type {
+  font-family: $font-mono;
+  font-size: 0.6rem;
+  color: $text-muted;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.edu-degree {
+  font-family: $font-display;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.edu-school {
+  font-size: 0.9rem;
+  color: $cyan;
+  margin-bottom: 0.3rem;
+}
+
+.edu-date {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $text-muted;
+}
+
+.edu-level {
+  font-size: 0.8rem;
+  color: $text-dim;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid $border-light;
+  background: $bg-card;
+  font-size: 0.85rem;
+}
+
+.cert-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.cert-name {
+  color: $text-dim;
+  font-size: 0.8rem;
+
+  strong {
+    color: #fff;
+    display: block;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .edu-card { flex: 0 0 260px; }
+  .edu-card.featured { flex: 0 0 280px; }
+  .cert-grid { grid-template-columns: 1fr; }
+}

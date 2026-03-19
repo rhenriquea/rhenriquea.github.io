@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+.konami-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba($bg-deep, 0.97);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: flashIn 0.5s ease-out;
+
+  &.show { display: flex; }
+}
+
+@keyframes flashIn {
+  0% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.konami-title {
+  font-family: $font-display;
+  font-size: 4rem;
+  font-weight: 900;
+  color: $amber;
+  text-shadow: 0 0 60px rgba($amber, 0.5);
+  animation: konamiPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes konamiPulse {
+  0% { text-shadow: 0 0 60px rgba($amber, 0.3); }
+  100% { text-shadow: 0 0 80px rgba($amber, 0.6), 0 0 120px rgba($pink, 0.3); }
+}
+
+.konami-text {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.konami-close {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $text-muted;
+  cursor: pointer;
+  margin-top: 2rem;
+  text-decoration: underline;
+}
+
+@media (max-width: $breakpoint-md) {
+  .konami-title { font-size: 2.5rem; }
+}

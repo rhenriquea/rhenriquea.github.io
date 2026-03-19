@@ -1,0 +1,151 @@
+@use "variables" as *;
+
+.tracklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid $border-subtle;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover { background: $bg-card-hover; }
+
+  &.active {
+    background: $bg-card;
+    border-left: 4px solid $cyan;
+
+    .track-details { display: block; }
+  }
+}
+
+.track-num {
+  font-family: $font-mono;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $pink;
+  text-align: center;
+}
+
+.track-info {
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .role {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: $cyan;
+  }
+
+  .location {
+    font-size: 0.8rem;
+    color: $text-muted;
+    margin-top: 2px;
+  }
+}
+
+.track-duration {
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  color: $text-dim;
+}
+
+.track-details {
+  display: none;
+  grid-column: 1 / -1;
+  padding: 1rem 0 0.5rem 3.5rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    color: $text-dim;
+    padding: 0.4rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: $pink;
+    }
+  }
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  font-family: $font-mono;
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border: 1px solid rgba($purple, 0.3);
+  color: $purple;
+  background: rgba($purple, 0.06);
+  letter-spacing: 0.04em;
+}
+
+.now-playing {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: $font-mono;
+  font-size: 0.6rem;
+  color: $green;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+
+.eq-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.eq-bar {
+  width: 3px;
+  background: $green;
+  animation: eqBounce 0.8s ease-in-out infinite alternate;
+
+  &:nth-child(1) { height: 4px; animation-delay: 0s; }
+  &:nth-child(2) { height: 10px; animation-delay: 0.15s; }
+  &:nth-child(3) { height: 6px; animation-delay: 0.3s; }
+}
+
+@keyframes eqBounce {
+  0% { height: 3px; }
+  100% { height: 12px; }
+}
+
+@media (max-width: $breakpoint-md) {
+  .track {
+    grid-template-columns: 36px 1fr auto;
+    padding: 0.8rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .track-num { font-size: 1rem; }
+  .track-details { padding-left: 2.5rem; }
+}

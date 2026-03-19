@@ -6,7 +6,7 @@ const KONAMI_SEQUENCE = [
   "b", "a",
 ];
 
-export function useKonamiCode() {
+export const useKonamiCode = () => {
   const [isActive, setIsActive] = useState(false);
   const [seqIndex, setSeqIndex] = useState(0);
 

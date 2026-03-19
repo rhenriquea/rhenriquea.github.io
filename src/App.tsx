@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import KonamiOverlay from "./components/KonamiOverlay";
 import { useKonamiCode } from "./hooks/useKonamiCode";
 
-export default function App() {
+const App: React.FC = () => {
   const { isActive, dismiss } = useKonamiCode();
 
   return (
@@ -28,4 +28,6 @@ export default function App() {
       <KonamiOverlay isActive={isActive} onDismiss={dismiss} />
     </>
   );
-}
+};
+
+export default App;

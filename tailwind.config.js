@@ -52,6 +52,13 @@ export default {
         "secondary-container": "#e00266",
         "secondary-fixed": "#ffd9df",
         "surface-container-low": "#231437",
+
+        // Accent colors (neon palette)
+        "accent-cyan": "#00f0ff",
+        "accent-pink": "#ff2d7b",
+        "accent-yellow": "#f8a826",
+        "accent-purple": "#b44dff",
+        "accent-green": "#39ff8e",
       },
       fontFamily: {
         headline: ["Newsreader"],

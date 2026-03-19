@@ -8,7 +8,7 @@ const titles = [
   "Team Empowerer",
 ];
 
-export function useTypewriter() {
+export const useTypewriter = () => {
   const [text, setText] = useState("");
   const [titleIdx, setTitleIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);

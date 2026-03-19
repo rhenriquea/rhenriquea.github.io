@@ -3,7 +3,7 @@ interface KonamiOverlayProps {
   onDismiss: () => void;
 }
 
-export default function KonamiOverlay({ isActive, onDismiss }: KonamiOverlayProps) {
+const KonamiOverlay: React.FC<KonamiOverlayProps> = ({ isActive, onDismiss }) => {
   return (
     <div className={`konami-overlay${isActive ? " show" : ""}`}>
       <div className="konami-title">YOU WIN!</div>
@@ -12,7 +12,7 @@ export default function KonamiOverlay({ isActive, onDismiss }: KonamiOverlayProp
       </div>
       <a
         href="mailto:rafa.almeida.js@gmail.com"
-        className="bg-[#00f0ff] text-black px-8 py-4 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] no-underline mt-4"
+        className="bg-accent-cyan text-black px-8 py-4 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] no-underline mt-4"
       >
         Send me an email
       </a>
@@ -21,4 +21,6 @@ export default function KonamiOverlay({ isActive, onDismiss }: KonamiOverlayProp
       </div>
     </div>
   );
-}
+};
+
+export default KonamiOverlay;

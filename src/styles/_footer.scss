@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+.footer-langs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.lang-badge {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $text-dim;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-flag {
+  font-size: 1.1rem;
+}

@@ -1,0 +1,48 @@
+// ======================
+// Theme Variables
+// ======================
+// Single source of truth for all colors, fonts, glows, and layout tokens.
+// Use these SCSS variables throughout all .scss files.
+// CSS custom properties are generated from these for runtime use.
+
+// --- Backgrounds ---
+$bg-deep: #0d0221;
+$bg-mid: #150833;
+$bg-surface: #1b0b2f;
+$bg-card: rgba(255, 255, 255, 0.04);
+$bg-card-hover: rgba(255, 255, 255, 0.08);
+
+// --- Accent Colors (must match tailwind.config.js accent-* tokens) ---
+$cyan: #00f0ff;
+$pink: #ff2d7b;
+$amber: #f8a826;
+$purple: #b44dff;
+$green: #39ff8e;
+
+// --- Text Colors ---
+$text: #e8e0f0;
+$text-dim: rgba(232, 224, 240, 0.5);
+$text-muted: rgba(232, 224, 240, 0.3);
+
+// --- Font Stacks ---
+$font-display: "Playfair Display", serif;
+$font-body: "Outfit", sans-serif;
+$font-mono: "DM Mono", monospace;
+
+// --- Glow Effects ---
+$glow-cyan: 0 0 20px rgba($cyan, 0.4), 0 0 60px rgba($cyan, 0.15);
+$glow-pink: 0 0 20px rgba($pink, 0.4), 0 0 60px rgba($pink, 0.15);
+$glow-amber: 0 0 20px rgba($amber, 0.3);
+
+// --- Borders ---
+$border-subtle: rgba(255, 255, 255, 0.05);
+$border-light: rgba(255, 255, 255, 0.06);
+$border-hover: rgba(255, 255, 255, 0.15);
+
+// --- Breakpoints ---
+$breakpoint-md: 768px;
+
+// --- Scrollbar ---
+$scrollbar-width: 6px;
+$scrollbar-track: $bg-deep;
+$scrollbar-thumb: $pink;

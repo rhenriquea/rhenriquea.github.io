@@ -1,54 +1,8 @@
-const impacts = [
-  {
-    badge: "Hi-Fi Stereo",
-    badgeBg: "bg-[#ff2d7b]",
-    borderColor: "border-[#ff2d7b]",
-    metric: "~$10K",
-    subtitle: "VENDOR ELIMINATED",
-    subtitleColor: "text-[#ff2d7b]",
-    decoColor: "decoration-[#00f0ff]",
-    tagline: '"The one where we didn\'t need the vendor."',
-    description:
-      "Built an in-house integration that replaced a third-party vendor entirely, saving the company approximately $10,000 and giving full ownership of the pipeline.",
-    company: "Formula.Monks — Senior Engineer / Team Lead",
-    companyColor: "text-[#ff2d7b]",
-    pulseColor: "bg-[#ff2d7b]/30",
-  },
-  {
-    badge: "AI Master",
-    badgeBg: "bg-[#00f0ff]",
-    borderColor: "border-[#00f0ff]",
-    metric: "RAG AI",
-    subtitle: "AI-POWERED CHAT",
-    subtitleColor: "text-[#00f0ff]",
-    decoColor: "decoration-[#ff2d7b]",
-    tagline: '"The one where the chatbot got smart."',
-    description:
-      "Pioneered an AI chat feature using Vertex AI with Retrieval-Augmented Generation, revolutionizing customer interaction with context-aware, intelligent responses.",
-    company: "Formula.Monks — Senior Engineer / Team Lead",
-    companyColor: "text-[#00f0ff]",
-    pulseColor: "bg-[#00f0ff]/30",
-  },
-  {
-    badge: "Enterprise",
-    badgeBg: "bg-[#f8a826]",
-    borderColor: "border-[#f8a826]",
-    metric: "SHIPPED",
-    subtitle: "CUSTOMER REFUND SYSTEM",
-    subtitleColor: "text-[#f8a826]",
-    decoColor: "decoration-white",
-    tagline: '"The one where customers got their money back."',
-    description:
-      "Led two engineers to launch Jumbo Supermarkten's customer refund project, migrated legacy systems to SSR Nuxt with microservices and GraphQL architecture.",
-    company: "Jumbo Supermarkten — Solutions Engineer",
-    companyColor: "text-[#f8a826]",
-    pulseColor: "bg-[#f8a826]/30",
-  },
-];
+import { impacts } from "../data/impacts";
 
-export default function ImpactTape() {
+const ImpactTape: React.FC = () => {
   return (
-    <section className="py-32 px-6 bg-[#150529] overflow-hidden" id="vhs">
+    <section className="py-32 px-6 bg-surface-container-lowest overflow-hidden" id="vhs">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-8 mb-24">
           <div className="poster-pink p-4 shadow-[10px_10px_0_#00f0ff]">
@@ -94,4 +48,6 @@ export default function ImpactTape() {
       </div>
     </section>
   );
-}
+};
+
+export default ImpactTape;

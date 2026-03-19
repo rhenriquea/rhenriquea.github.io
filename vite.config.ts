@@ -6,4 +6,11 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["import"],
+      },
+    },
+  },
 });
