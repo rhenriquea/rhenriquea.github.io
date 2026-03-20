@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; // offset for fixed nav (h-16 = 4rem + 1rem buffer)
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
 @import "effects";
 @import "tracklist";
 @import "education";

@@ -1,5 +1,8 @@
+import type { IconType } from "react-icons";
+import { MdCloud, MdCode, MdStorage, MdPsychology, MdGroups } from "react-icons/md";
+
 export interface Skill {
-  icon: string;
+  icon: IconType;
   title: string;
   accentClass: string;
   iconColor: string;
@@ -9,7 +12,7 @@ export interface Skill {
 
 export const skills: Skill[] = [
   {
-    icon: "cloud",
+    icon: MdCloud,
     title: "Cloud & Infra",
     accentClass: "poster-cyan",
     iconColor: "text-accent-cyan",
@@ -17,28 +20,28 @@ export const skills: Skill[] = [
     level: "LVL 99",
   },
   {
-    icon: "code",
+    icon: MdCode,
     title: "Frontend",
     accentClass: "poster-pink",
     iconColor: "text-accent-pink",
     items: ["React / Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
-    icon: "database",
+    icon: MdStorage,
     title: "Backend",
     accentClass: "poster-yellow",
     iconColor: "text-accent-yellow",
     items: ["Node.js / Go", "PostgreSQL", "GraphQL"],
   },
   {
-    icon: "psychology",
+    icon: MdPsychology,
     title: "AI & ML",
     accentClass: "bg-purple-500",
     iconColor: "text-purple-400",
     items: ["LLM Engineering", "Vertex AI", "LangChain"],
   },
   {
-    icon: "groups",
+    icon: MdGroups,
     title: "Leadership",
     accentClass: "bg-emerald-500",
     iconColor: "text-emerald-400",

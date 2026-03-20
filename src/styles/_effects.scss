@@ -4,10 +4,6 @@
 // Visual Effects
 // ======================
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-}
-
 // --- Scrollbar ---
 ::-webkit-scrollbar { width: $scrollbar-width; }
 ::-webkit-scrollbar-track { background: $scrollbar-track; }
@@ -43,8 +39,10 @@
 
 // --- Chrome Text ---
 .chrome-text {
+  color: #fff; // Accessible fallback — overridden visually by -webkit-text-fill-color
   background: linear-gradient(to bottom, #fff 0%, #fff 45%, #777 50%, #444 55%, #111 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 10px rgba($cyan, 0.8)) drop-shadow(0 0 20px rgba($pink, 0.5));
   text-transform: uppercase;
@@ -70,6 +68,32 @@
     radial-gradient(1.5px 1.5px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
   background-repeat: repeat;
   background-size: 200px 200px;
+}
+
+// --- Coords Watermark ---
+.coords-box::before {
+  content: "[ COORDS ]";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Monoton", cursive;
+  font-size: 3rem;
+  font-style: italic;
+  letter-spacing: 0.25em;
+  color: $cyan;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+// --- Nav Logo Gradient ---
+.nav-logo-text {
+  color: #fff;
+  background: linear-gradient(to bottom, #fff, #94a3b8, #475569);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 // --- Poster Accent Backgrounds ---
@@ -112,4 +136,126 @@
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+// --- Profile Photo Glitch ---
+.glitch-container {
+  cursor: pointer;
+
+  // Scanline overlay
+  .glitch-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover .glitch-scanlines {
+    opacity: 1;
+  }
+
+  // RGB channel split on hover via box-shadow hack on the image
+  .glitch-img {
+    position: relative;
+    transition: filter 0.3s;
+  }
+
+  &:hover .glitch-img {
+    animation: glitch-shift 0.4s steps(2) infinite;
+    filter: grayscale(1) contrast(1.5) brightness(1.1);
+  }
+
+  // RGB split layers via pseudo-elements on the container
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    mix-blend-mode: screen;
+  }
+
+  &:hover::before {
+    opacity: 0.6;
+    background: $cyan;
+    mix-blend-mode: multiply;
+    animation: glitch-r 0.3s steps(3) infinite alternate;
+  }
+
+  &:hover::after {
+    opacity: 0.4;
+    background: $pink;
+    mix-blend-mode: multiply;
+    animation: glitch-b 0.3s steps(3) infinite alternate-reverse;
+  }
+}
+
+@keyframes glitch-shift {
+  0% { transform: translate(0); }
+  25% { transform: translate(-3px, 1px); }
+  50% { transform: translate(2px, -1px); }
+  75% { transform: translate(-1px, 2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-r {
+  0% { clip-path: inset(10% 0 80% 0); transform: translate(4px, -2px); }
+  33% { clip-path: inset(40% 0 30% 0); transform: translate(-3px, 1px); }
+  66% { clip-path: inset(70% 0 5% 0); transform: translate(2px, 3px); }
+  100% { clip-path: inset(20% 0 60% 0); transform: translate(-4px, -1px); }
+}
+
+@keyframes glitch-b {
+  0% { clip-path: inset(60% 0 10% 0); transform: translate(-4px, 2px); }
+  33% { clip-path: inset(15% 0 70% 0); transform: translate(3px, -1px); }
+  66% { clip-path: inset(50% 0 20% 0); transform: translate(-2px, -3px); }
+  100% { clip-path: inset(5% 0 85% 0); transform: translate(4px, 1px); }
+}
+
+// --- Full-height Sections ---
+.section-full {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+// --- Focus Styles ---
+.track:focus-visible {
+  outline: 2px solid $cyan;
+  outline-offset: -2px;
+}
+
+.konami-close:focus-visible {
+  outline: 2px solid $cyan;
+  outline-offset: 4px;
+}
+
+// --- Reduced Motion ---
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

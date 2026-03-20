@@ -1,3 +1,4 @@
+import { MdExpandMore } from "react-icons/md";
 import { useTypewriter } from "../hooks/useTypewriter";
 
 const Hero: React.FC = () => {
@@ -5,8 +6,8 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 starfield opacity-40 animate-star-pulse" />
-      <div className="absolute inset-0 perspective-grid">
+      <div className="absolute inset-0 starfield opacity-40 animate-star-pulse" aria-hidden="true" />
+      <div className="absolute inset-0 perspective-grid" aria-hidden="true">
         <div className="grid-lines" />
         <div className="absolute top-1/2 left-0 w-full h-[2px] bg-primary shadow-[0_0_30px_#00dbe9] z-10" />
       </div>
@@ -15,29 +16,33 @@ const Hero: React.FC = () => {
           RAFAEL ALMEIDA
         </h1>
         <div className="font-label text-xl md:text-2xl text-primary tracking-[0.5em] uppercase mb-12 flex items-center justify-center gap-4 neon-flicker">
-          <span className="text-accent-pink">[</span>
+          <span className="text-accent-pink" aria-hidden="true">[</span>
           <span className="text-white">{typedText}</span>
-          <span className="cursor">|</span>
-          <span className="text-accent-pink">]</span>
+          <span className="cursor" aria-hidden="true">|</span>
+          <span className="text-accent-pink" aria-hidden="true">]</span>
         </div>
         <div className="flex flex-col md:flex-row gap-6 justify-center">
           <a
             href="#mixtape"
-            className="bg-accent-cyan text-black px-12 py-5 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] active:scale-95 no-underline text-center"
+            className="bg-accent-cyan text-black px-12 py-5 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] active:scale-95 no-underline text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             VIEW MY WORK
           </a>
           <a
             href="#contact"
-            className="border-2 border-accent-pink text-accent-pink px-12 py-5 font-label font-bold uppercase tracking-widest hover:bg-accent-pink/10 transition-all shadow-[0_0_20px_rgba(255,45,123,0.3)] active:scale-95 no-underline text-center"
+            className="border-2 border-accent-pink text-accent-pink px-12 py-5 font-label font-bold uppercase tracking-widest hover:bg-accent-pink/10 transition-all shadow-[0_0_20px_rgba(255,45,123,0.3)] active:scale-95 no-underline text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-pink"
           >
             GET IN TOUCH
           </a>
         </div>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <span className="material-symbols-outlined text-accent-pink text-4xl">expand_more</span>
-      </div>
+      <a
+        href="#profile"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce p-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-pink"
+        aria-label="Scroll to profile section"
+      >
+        <MdExpandMore className="text-accent-pink text-4xl" />
+      </a>
     </section>
   );
 };

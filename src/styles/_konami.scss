@@ -43,11 +43,14 @@
 
 .konami-close {
   font-family: $font-mono;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: $text-muted;
   cursor: pointer;
   margin-top: 2rem;
   text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
 }
 
 @media (max-width: $breakpoint-md) {

@@ -3,8 +3,11 @@ export interface Language {
   name: string;
 }
 
+import type { IconType } from "react-icons";
+import { MdTerminal, MdDataObject, MdMail } from "react-icons/md";
+
 export interface SocialLink {
-  icon: string;
+  icon: IconType;
   label: string;
   href: string;
   external?: boolean;
@@ -18,7 +21,7 @@ export const languages: Language[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { icon: "terminal", label: "GITHUB", href: "https://github.com/rhenriquea", external: true },
-  { icon: "data_object", label: "LINKEDIN", href: "https://www.linkedin.com/in/rhenriquea", external: true },
-  { icon: "mail", label: "EMAIL", href: "mailto:rafa.almeida.js@gmail.com" },
+  { icon: MdTerminal, label: "GITHUB", href: "https://github.com/rhenriquea", external: true },
+  { icon: MdDataObject, label: "LINKEDIN", href: "https://www.linkedin.com/in/rhenriquea", external: true },
+  { icon: MdMail, label: "EMAIL", href: "mailto:rafa.almeida.js@gmail.com" },
 ];
