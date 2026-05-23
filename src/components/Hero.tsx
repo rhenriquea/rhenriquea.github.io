@@ -1,48 +1,128 @@
-import { MdExpandMore } from "react-icons/md";
-import { useTypewriter } from "../hooks/useTypewriter";
+import Reveal from "./Reveal";
+import { IconArrow, IconPdf, IconHex, IconStar, IconUser, IconCode, IconCloud, IconActivity } from "./Icon";
+
+const SERVICES = [
+  {
+    icon: <IconHex width="28" height="28" />,
+    h: "Domain-Driven Design",
+    p: "Event Storming, bounded contexts, and Spec-Driven Development that decouple teams and clarify APIs.",
+  },
+  {
+    icon: <IconCode width="28" height="28" />,
+    h: "Full-Stack Delivery",
+    p: "TypeScript end-to-end — React/Next.js, Node.js, GraphQL on AppSync, zero-to-production.",
+  },
+  {
+    icon: <IconCloud width="28" height="28" />,
+    h: "Serverless AWS",
+    p: "Lambda, AppSync, DynamoDB, Cognito, CDK — cost-efficient systems without ops overhead.",
+  },
+  {
+    icon: <IconActivity width="28" height="28" />,
+    h: "Event-Driven & AI",
+    p: "Kafka integrations, Vertex AI + RAG in production, agentic workflows for docs and QA.",
+  },
+];
 
 const Hero: React.FC = () => {
-  const typedText = useTypewriter();
-
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 starfield opacity-40 animate-star-pulse" aria-hidden="true" />
-      <div className="absolute inset-0 perspective-grid" aria-hidden="true">
-        <div className="grid-lines" />
-        <div className="absolute top-1/2 left-0 w-full h-[2px] bg-primary shadow-[0_0_30px_#00dbe9] z-10" />
-      </div>
-      <div className="relative z-10 text-center px-4">
-        <h1 className="chrome-text text-6xl md:text-[10rem] tracking-tighter leading-none mb-4 italic">
-          RAFAEL ALMEIDA
-        </h1>
-        <div className="font-label text-xl md:text-2xl text-primary tracking-[0.5em] uppercase mb-12 flex items-center justify-center gap-4 neon-flicker">
-          <span className="text-accent-pink" aria-hidden="true">[</span>
-          <span className="text-white">{typedText}</span>
-          <span className="cursor" aria-hidden="true">|</span>
-          <span className="text-accent-pink" aria-hidden="true">]</span>
+    <section id="top" className="hero-section">
+      <div className="wrap">
+        <div className="hero-aura" />
+        <div className="panel">
+          <div className="hero-grid">
+            <Reveal>
+              <div className="southeast-chip">
+                <span className="flag" />
+                <span>Sudeste · Brasil → Remote</span>
+              </div>
+              <div
+                className="hero-role"
+                style={{ fontSize: 14, color: "var(--fg-dim)", marginBottom: 20 }}
+              >
+                Staff Software Engineer · TypeScript · Node.js · React · AWS · DDD
+              </div>
+              <h1 className="hero-title">
+                I'm <span className="accent">Rafael</span>, a staff software engineer
+              </h1>
+              <p className="hero-lede">
+                Brasileiro em São Paulo com 10 anos em empresas europeias. TypeScript, Node.js,
+                React e AWS serverless — com foco em Event-Driven, DDD e full-stack delivery.
+              </p>
+              <div className="hero-cta-row">
+                <a href="#contact" className="btn btn-primary">
+                  Let's Talk <IconArrow width="16" height="16" />
+                </a>
+                <a
+                  href="assets/Rafael_Almeida_CV.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  className="btn btn-ghost"
+                >
+                  <IconPdf width="16" height="16" /> Download CV
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="portrait-stage">
+                <div className="dots dots-tl" />
+                <div className="dots dots-br" />
+                <div className="blob-dark" />
+                <div className="blob" />
+                <div className="portrait-img-wrap">
+                  <img src="assets/rafael-portrait.png" alt="Rafael Almeida" />
+                </div>
+
+                <div className="stat-card pos-tl">
+                  <div className="stat-icon">
+                    <IconHex width="18" height="18" />
+                  </div>
+                  <div>
+                    <div className="k">10+ Yrs</div>
+                    <div className="v">Production</div>
+                  </div>
+                </div>
+
+                <div className="stat-card pos-mr">
+                  <div className="stat-icon rio">
+                    <IconStar width="16" height="16" />
+                  </div>
+                  <div>
+                    <div className="k">TypeScript</div>
+                    <div className="v">Node · React · AWS</div>
+                  </div>
+                </div>
+
+                <div className="stat-card pos-br">
+                  <div className="stat-icon">
+                    <IconUser width="18" height="18" />
+                  </div>
+                  <div>
+                    <div className="k">Staff Engineer</div>
+                    <div className="v">TS · DDD · AWS</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="services">
+            <h3 className="services-head">
+              <span className="dot" /> What I Do
+            </h3>
+            <div className="services-grid">
+              {SERVICES.map((s, i) => (
+                <Reveal key={s.h} delay={i * 80} className="service">
+                  <div className="service-icon">{s.icon}</div>
+                  <h4>{s.h}</h4>
+                  <p>{s.p}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-6 justify-center">
-          <a
-            href="#mixtape"
-            className="bg-accent-cyan text-black px-12 py-5 font-label font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.6)] active:scale-95 no-underline text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-          >
-            VIEW MY WORK
-          </a>
-          <a
-            href="#contact"
-            className="border-2 border-accent-pink text-accent-pink px-12 py-5 font-label font-bold uppercase tracking-widest hover:bg-accent-pink/10 transition-all shadow-[0_0_20px_rgba(255,45,123,0.3)] active:scale-95 no-underline text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-pink"
-          >
-            GET IN TOUCH
-          </a>
-        </div>
       </div>
-      <a
-        href="#profile"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce p-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-pink"
-        aria-label="Scroll to profile section"
-      >
-        <MdExpandMore className="text-accent-pink text-4xl" />
-      </a>
     </section>
   );
 };
